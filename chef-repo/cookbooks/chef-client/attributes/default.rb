@@ -35,7 +35,7 @@ default['chef_client']['config']['client_fork'] = true
 
 # log_file has no effect when using runit
 default['chef_client']['log_file']    = 'client.log'
-default['chef_client']['interval']    = '1800'
+default['chef_client']['interval']    = '60'
 default['chef_client']['splay']       = '300'
 default['chef_client']['conf_dir']    = '/etc/chef'
 default['chef_client']['bin']         = '/usr/bin/chef-client'
@@ -185,3 +185,6 @@ default['chef_client']['log_rotation']['postrotate'] =  case node['chef_client']
                                                         else
                                                           '/etc/init.d/chef-client reload >/dev/null || :'
                                                         end
+
+
+
